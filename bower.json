@@ -1,0 +1,8 @@
+{
+  "name": "day-viewer",
+  "version": "0.0.0",
+  "description": "Day viewer",
+  "private": false,
+  "dependencies": {
+  }
+}
