@@ -1,34 +1,23 @@
-// --- Shared values --- //
+// --- System-wide logic --- //
 
 $colors: (
   black: #000000,
-  white: #FFFFFF,
+  white: #ffffff,
 
-  gray-1: #212121, // 87% opacity of black on white
-  gray-2: #727272, // 54% opacity of black on white
-  gray-3: #b8b8b8, // 26% opacity of black on white
-  gray-4: #dadada, // 12% opacity of black on white
-  gray-5: #f9f9f9,
+  gray-1: #555555,
+  gray-2: #a5a5a5,
+  gray-3: #dedede,
+  gray-4: #ececec,
 
-  blue-1: #2299EE,
-  blue-2: #77CCFF,
-
-  yellow-1: #D6AF00,
-  yellow-2: #FFE675
+  blue-1: #486caa
 );
 
 $font-sizes: (
   xs: 12px,
   s: 14px,
   m: 16px,
-  l: 22px,
-  xl: 32px,
+  l: 18px
 );
-
-//@font-face {
-//  font-family: font-name;
-//  src: url('../fonts/**');// TODO: add custom font
-//}
 
 @mixin helvetica-stack() {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
@@ -43,50 +32,20 @@ $font-sizes: (
   @return map-get($font-sizes, $size-name);
 }
 
-// --- General styles --- //
+$time-column-width: 100px;
+$time-tick-height: 30px;
 
-ul, ol, dl, dd, dt, li, div, body, p, form, hr, h1, h2, h3, h4, h5, img, button {
-  margin: 0;
-  padding: 0;
-}
+// --- Top-level styles --- //
 
-ul {
-  padding-left: 0;
-  list-style-type: none;
-  width: 100%;
-}
-
-html {
-  font-size: font-size(m);
-  line-height: font-size(m);
-}
-
-body {
+#day-viewer {
   @include helvetica-stack();
 
-  padding-bottom: 120px;
-
-  color: color(gray-1);
-  background-color: color(gray-5);
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
 }
 
-h1, h2, h3, h4, h5 {
-  text-align: center;
-//  font-family: ...;
-}
+// --- Include all partials --- //
 
-a {
-//  color: color(...);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-a:visited {
-  //  color: color(...);
-}
-a:hover {
-  //  color: color(...);
-  text-decoration: underline;
-}
-a:active {
-  //  color: color(...);
-}
+@import 'events-panel/events-panel';
+@import 'time-column/time-column';

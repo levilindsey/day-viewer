@@ -9,7 +9,6 @@ gulp.task('scripts', function () {
       .pipe(gulp.dest(config.scriptsDist))
       .pipe(plugins.size({title: 'Scripts before minifying'}))
       .pipe(plugins.rename({suffix: '.min'}))
-      .pipe(plugins.ngAnnotate())
       .pipe(plugins.uglify())
       .pipe(gulp.dest(config.scriptsDist))
       .pipe(plugins.size({title: 'Scripts after minifying'}));

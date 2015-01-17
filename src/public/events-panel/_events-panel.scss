@@ -1,0 +1,31 @@
+.events-panel {
+  position: relative;
+  width: 600px;
+  height: 720px;
+  padding: 0 10px;
+  background-color: color(gray-4);
+  border: 0 solid color(gray-3);
+  border-left-width: 1px;
+}
+
+.event {
+  position: absolute;
+  border: 0 solid color(blue-1);
+  border-left-width: 4px;
+
+  > h1,
+  > h2 {
+    margin: 0 0 0 6px;
+  }
+
+  > h1 {
+    margin-top: 6px;
+    font-size: font-size(m);
+    color: color(blue-1);
+  }
+
+  > h2 {
+    font-size: font-size(xs);
+    color: color(gray-2);
+  }
+}

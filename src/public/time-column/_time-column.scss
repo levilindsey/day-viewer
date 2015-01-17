@@ -1,0 +1,29 @@
+.time-column {
+  width: $time-column-width;
+  padding: 0;
+  list-style-type: none;
+  margin: -$time-tick-height / 2 8px 0 0;
+  font-size: font-size(l);
+  color: color(gray-1);
+}
+
+.time-tick {
+  height: $time-tick-height;
+  line-height: $time-tick-height;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.time-tick:nth-child(odd) {
+  font-weight: bold;
+}
+
+.time-tick:nth-child(even),
+.am-pm {
+  font-size: font-size(s);
+  color: color(gray-2);
+}
+
+.time-tick:nth-child(even) > .am-pm {
+  display: none;
+}
