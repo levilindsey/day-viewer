@@ -1,6 +1,6 @@
 {
   "name": "day-viewer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Day viewer",
   "private": false,
   "domains": [
@@ -56,7 +56,7 @@
     "karma-phantomjs-launcher": "^0.1.4"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.10.21"
   },
   "main": "src/server/main",
   "scripts": {

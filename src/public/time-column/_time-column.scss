@@ -1,8 +1,10 @@
+/* --- Time Column --- */
+
 .time-column {
-  width: $time-column-width;
+  min-width: $time-column-min-width;
   padding: 0;
   list-style-type: none;
-  margin: -$time-tick-height / 2 8px 0 0;
+  margin: -$time-tick-height / 2 10px 0 0;
   font-size: font-size(l);
   color: color(gray-1);
 }

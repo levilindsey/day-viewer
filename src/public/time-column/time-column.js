@@ -1,6 +1,12 @@
 'use strict';
 
 (function () {
+  /**
+   * This module defines all of the logic for rendering the time column ticks along the left-side of the day viewer.
+   *
+   * @module time-column
+   */
+
   // Create the app namespace if this module is included first
   window.dv = window.dv || {};
 
@@ -12,10 +18,12 @@
   // ---  --- //
 
   /**
+   * Creates time-tick list-item elements and adds them to the given time-column element.
+   *
    * @param {HTMLElement} timeColumnElement
    */
   function renderTimeColumn(timeColumnElement) {
-    var minutes, timeStr, ampmStr, timeTickElement, ampmElement;
+    var minutes, timeStr, ampmStr;
 
     // Clear any old content from the element (ensures idempotency)
     timeColumnElement.innerHTML = '';
@@ -23,25 +31,40 @@
     for (minutes = dv.minTimeInMinutes;
          minutes <= dv.maxTimeInMinutes;
          minutes += dv.timeColumnTickIntervalInMinutes) {
-      // Determine the string values for this time
+      // Determine the string values for the time tick
       timeStr = minutesToTimeString(minutes);
       ampmStr = minutesToAmPmString(minutes);
 
-      // Add the DOM elements for this time
-
-      timeTickElement = document.createElement('li');
-      timeColumnElement.appendChild(timeTickElement);
-      timeTickElement.className = 'time-tick';
-      timeTickElement.innerHTML = timeStr;
-
-      ampmElement = document.createElement('span');
-      ampmElement.className = 'am-pm';
-      ampmElement.innerHTML = ' ' + ampmStr;
-      timeTickElement.appendChild(ampmElement);
+      // Create the DOM elements for the time tick
+      renderTimeTick(timeStr, ampmStr, timeColumnElement);
     }
   }
 
   /**
+   * Creates a time-tick list item element with the given time and AM/PM strings, and adds the tick as a child of the
+   * given time-column element.
+   *
+   * @param {String} timeStr
+   * @param {String} ampmStr
+   * @param {HTMLElement} timeColumnElement
+   */
+  function renderTimeTick(timeStr, ampmStr, timeColumnElement) {
+    var timeTickElement, ampmElement;
+
+    timeTickElement = document.createElement('li');
+    timeColumnElement.appendChild(timeTickElement);
+    timeTickElement.className = 'time-tick';
+    timeTickElement.innerHTML = timeStr;
+
+    ampmElement = document.createElement('span');
+    ampmElement.className = 'am-pm';
+    ampmElement.innerHTML = ' ' + ampmStr;
+    timeTickElement.appendChild(ampmElement);
+  }
+
+  /**
+   * Translates the given number of minutes past 9:00 AM into a string of the form "[h]h:mm".
+   *
    * @param {Number} minutes
    * @returns {String}
    */
@@ -67,8 +90,10 @@
   }
 
   /**
+   * Determines the appropriate AM/PM string value that corresponds to the given number of minutes past 9:00 AM.
+   *
    * @param {Number} minutes
-   * @returns {String}
+   * @returns {'AM'|'PM'}
    */
   function minutesToAmPmString(minutes) {
     // Extract the hour and minute components from the total number of minutes

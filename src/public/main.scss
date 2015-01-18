@@ -4,20 +4,23 @@ $colors: (
   black: #000000,
   white: #ffffff,
 
-  gray-1: #555555,
+  gray-1: #686868,
   gray-2: #a5a5a5,
-  gray-3: #dedede,
+  gray-3: #d6d6d6,
   gray-4: #ececec,
 
   blue-1: #486caa
 );
 
 $font-sizes: (
-  xs: 12px,
-  s: 14px,
-  m: 16px,
-  l: 18px
+  xs: 9px,
+  s: 11px,
+  m: 13px,
+  l: 15px
 );
+
+$time-column-min-width: 80px;
+$time-tick-height: 30px;
 
 @mixin helvetica-stack() {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
@@ -32,10 +35,7 @@ $font-sizes: (
   @return map-get($font-sizes, $size-name);
 }
 
-$time-column-width: 100px;
-$time-tick-height: 30px;
-
-// --- Top-level styles --- //
+/* --- Top-level styles --- */
 
 #day-viewer {
   @include helvetica-stack();

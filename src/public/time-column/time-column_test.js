@@ -1,7 +1,15 @@
 'use strict';
 
 describe('Module: time-column', function () {
-// TODO: write tests
+  // TODO: logic to test:
+  //   dv.renderTimeColumn
+  //   dv.minutesToTimeString
+  //   dv.minutesToAmPmString
+
+  // TODO: aspects to test:
+  // - correct rendered strings in time column
+  // -
+
   beforeEach(function () {
   });
 

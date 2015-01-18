@@ -1,17 +1,28 @@
+/* --- Events Panel --- */
+
+$event-border-width: 1px;
+$event-border-left-width: 4px;
+
 .events-panel {
+  flex: 0 0 620px;
   position: relative;
-  width: 600px;
   height: 720px;
-  padding: 0 10px;
   background-color: color(gray-4);
-  border: 0 solid color(gray-3);
-  border-left-width: 1px;
+
+  /* The border is used to mimic padding while the shadow is used to mimic the border. */
+  /* This makes it easier to calculate the absolute positions of the event elements. */
+  border: 0 solid color(gray-4);
+  border-width: 0 10px;
+  box-shadow: -1px 0 0 0 color(gray-3);
 }
 
 .event {
   position: absolute;
-  border: 0 solid color(blue-1);
-  border-left-width: 4px;
+  border: $event-border-width solid color(gray-3);
+  border-left-width: 0;
+  box-shadow: -$event-border-left-width 0 0 0 color(blue-1);
+  background-color: color(white);
+  overflow: hidden;
 
   > h1,
   > h2 {
@@ -25,6 +36,7 @@
   }
 
   > h2 {
+    margin-top: 2px;
     font-size: font-size(xs);
     color: color(gray-2);
   }
