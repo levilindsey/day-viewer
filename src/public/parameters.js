@@ -1,10 +1,20 @@
 'use strict';
 
 (function () {
+  // --- Definitions of some common types --- //
+
   /**
    * @typedef {Object} Event
    * @property {Number} start
    * @property {Number} end
+   */
+
+  /**
+   * @typedef {Object} BoundingBox
+   * @property {String} left
+   * @property {String} top
+   * @property {String} width
+   * @property {String} height
    */
 
   // Create the app namespace if this module is included first
@@ -14,12 +24,11 @@
 
   dv.minTimeInMinutes = 0;
   dv.maxTimeInMinutes = 720;
+
   dv.timeColumnTickIntervalInMinutes = 30;
 
   // A minute value of zero corresponds to 9:00 AM
   dv.startingHourValue = 9;
-
-  dv.minutesToPixelsRatio = 1;
 
   // NOTE: this needs to be kept in-sync with the corresponding styles in the stylesheet
   dv.eventBorderLeftWidth = 4;
