@@ -12,6 +12,7 @@
 
   // Expose logic on the app namespace
   dv.createEventElements = createEventElements;
+  dv.createEventElement = createEventElement;
 
   // ---  --- //
 

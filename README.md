@@ -1,8 +1,6 @@
-# day-viewer
+# Day viewer
 
-#### Day viewer
-
-_See this running at [appShortenedUrl][demo-url]!_
+_See this running at [day-viewer.jit.su][demo-url]!_
 
 - [Getting Set Up](./docs/getting-set-up.md)
 - [Understanding the Code](./docs/understanding-the-code.md)
@@ -18,10 +16,6 @@ This project uses technology from a number of third-parties. These technologies 
 - [Git][git-url]
 - [generator-meanie][generator-meanie-url]
 - Numerous other packages that are available via [NPM][npm-url] (these are listed within the [`package.json`](./package.json) file)
-
-## License
-
-MIT
 
 
 [demo-url]: http://day-viewer.jit.su

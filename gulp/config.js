@@ -20,14 +20,12 @@ config.scriptDistFileName = 'day-viewer.js';
 
 config.distGlob = config.distPath + '/**';
 
-config.scriptsDistFilePath = config.scriptsDist + '/' + config.scriptDistFileName;
 config.frontEndTestsSrc = config.publicPath + '/**/*_test.js';
 config.backEndTestsSrc = config.serverPath + '/**/*_test.js';
 
 config.allFilesForFrontEndTests = [
-  config.bowerPath + '/angular-mocks/angular-mocks.js',
-  config.scriptsDistFilePath,
-  config.frontEndTestsSrc
+  config.publicPath + '/**/*.js',
+  '!' + config.publicPath + '/main.js'
 ];
 
 config.indexSrc = config.publicPath + '/index.html';
