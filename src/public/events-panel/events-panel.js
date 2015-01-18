@@ -52,7 +52,7 @@
         .forEach(function (event) {
           // If the event starts after the latest end time from all previous events, then we have all of the
           // information that is needed in order to position the latest sub-group of events.
-          if (event.start >= latestEndTime) {
+          if (event.start > latestEndTime) {
             renderColumns(eventsPanelElement, subGroupColumns);
             subGroupColumns.length = 0;
             latestEndTime = Number.NaN;
@@ -140,7 +140,7 @@
   function calculateEventDimensions(columnCount, columnIndex, event) {
     var duration, widthPercentage, leftPercentage, borderOffsetX, borderOffsetY, left, top, width, height;
 
-    duration = event.end - event.start;
+    duration = event.end - event.start + 1;
     widthPercentage = 100 / columnCount;
     leftPercentage = widthPercentage * columnIndex;
 
