@@ -1,0 +1,87 @@
+/* --- Top-level styles --- */
+
+#day-viewer {
+  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: 300;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 30px 0;
+}
+
+/* --- Events Panel --- */
+
+.events-panel {
+  -webkit-flex: 0 0 620px;
+      -ms-flex: 0 0 620px;
+          flex: 0 0 620px;
+  position: relative;
+  height: 720px;
+  background-color: #ececec;
+  /* The border is used to mimic padding while the shadow is used to mimic the border. */
+  /* This makes it easier to calculate the absolute positions of the event elements. */
+  border: 0 solid #ececec;
+  border-width: 0 10px;
+  box-shadow: -1px 0 0 0 #d6d6d6;
+}
+
+.event {
+  position: absolute;
+  border: 1px solid #d6d6d6;
+  border-left-width: 0;
+  box-shadow: -4px 0 0 0 #486caa;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+.event > h1,
+.event > h2 {
+  margin: 0 0 0 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.event > h1 {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #486caa;
+}
+.event > h2 {
+  margin-top: 2px;
+  font-size: 9px;
+  color: #a5a5a5;
+}
+
+/* --- Time Column --- */
+
+.time-column {
+  min-width: 80px;
+  padding: 0;
+  list-style-type: none;
+  margin: -15px 10px 0 0;
+  font-size: 15px;
+  color: #686868;
+}
+
+.time-tick {
+  height: 30px;
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.time-tick:nth-child(odd) {
+  font-weight: bold;
+}
+
+.time-tick:nth-child(even),
+.am-pm {
+  font-size: 11px;
+  color: #a5a5a5;
+}
+
+.time-tick:nth-child(even) > .am-pm {
+  display: none;
+}

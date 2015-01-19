@@ -4,11 +4,13 @@
 
 ### `dist` vs `src`
 
-While developing the solution to this challenge, I used a gulp-based build system and a Node.js server running 
-locally. So I have submitted both the original versions of my code and the built versions of my code. The built 
-version (`dist`) is what you should run your tests against.
+While developing the solution to this challenge, I used a gulp-based build system (which was probably overkill for 
+this small project...). So I have submitted both the original versions of my code and the built versions of my code. 
+The built version (`dist`) is what you should run your tests against. But it might be easier to read the JavaScript 
+from the original version (`src`), because it is all concatenated into one file in `dist`.
 
-I also have all of my code in a GitHub repository at https://github.com/levisl176/day-viewer.
+I also have all of my code in a GitHub repository at https://github.com/levisl176/day-viewer, in case that is easier 
+for anyone.
 
 ### JavaScript Modules
 
