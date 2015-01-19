@@ -1,6 +1,12 @@
 'use strict';
 
 (function () {
+  /**
+   * This module defines some of the common parameters/constants that are used throughout the application.
+   *
+   * @module parameters
+   */
+
   // --- Definitions of some common types --- //
 
   /**

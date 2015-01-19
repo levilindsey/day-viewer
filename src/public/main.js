@@ -2,7 +2,8 @@
 
 (function () {
   /**
-   * This module populates the time column and exposes the layOutDay function on the global scope.
+   * This module is the main entry point for execution of the application. It renders the day viewer and exposes the
+   * layOutDay function on the global scope.
    *
    * @module main
    */
